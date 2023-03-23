@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoList = ({ todos, handleDelete, handleEdit }) => {
+const TodoList = ({ todos, handleDelete, handleEdit, toggleComplete }) => {
   return (
     <ul className="allTodos">
       {todos.map((t) => (
@@ -10,6 +10,8 @@ const TodoList = ({ todos, handleDelete, handleEdit }) => {
           </span>
           <button onClick={() => handleEdit(t.id)}>Edit</button>
           <button onClick={() => handleDelete(t.id)}>Delete</button>
+          <button type="checkbox" checked = {t.completed } onChange={()=> toggleComplete(t.id)}></button>
+          
           
           
         </li>
